@@ -1,0 +1,5 @@
+/* pages/regist/regist.wxss */
+.intro{
+  text-align: "center";
+  border: 1px solid #ddd;
+}

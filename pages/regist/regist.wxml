@@ -1,0 +1,4 @@
+<!--pages/regist/regist.wxml-->
+<view><text>请输入你的工号</text></view>
+<input type="text" bindinput="input" />
+<button bindtap="btnClick">点击</button>
