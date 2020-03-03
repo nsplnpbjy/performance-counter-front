@@ -1,4 +1,4 @@
-/* pages/leader/leader.wxss */
+/* pages/teamLeader/teamLeader.wxss */
 
 view {
   margin: 40rpx;

@@ -1,4 +1,4 @@
-// pages/leader/leader.js
+// pages/teamLeader/teamLeader.js
 const app=getApp()
 Page({
 
@@ -7,30 +7,30 @@ Page({
    */
   data: {
     userId:null
-
   },
-  //排名列表
-  personList: function () {
+  //推荐人员
+  recPerson: function () {
     wx.navigateTo({
-      url: '../personList/personList',
+      url: '../recPerson/recPerson',
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
     })
+
   },
-  //专项申请
-  speReq: function () {
+  //排名列表
+  personList:function(){
     wx.navigateTo({
-      url: '../speReq/speReq',
-    })
-  },
-  //专项管理
-  speMana: function(){
-    wx.navigateTo({
-      url: '../speMana/speMana',
+      url: '../personList/personList',
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
+    })
+  },
+  //专项申请
+  speReq: function(){
+    wx.navigateTo({
+      url: '../speReq/speReq',
     })
   },
   /**

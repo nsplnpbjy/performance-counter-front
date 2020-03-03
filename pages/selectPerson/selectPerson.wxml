@@ -1,0 +1,31 @@
+<!--pages/selectPerson/selectPerson.wxml-->
+<input bindinput="inputSearchName" class="intro"  placeholder="请输入你想搜索的人名，支持模糊搜索"></input>
+<view>
+  <button  type="warn" bindtap="search">搜索</button>
+</view>
+<view>
+  <text>-----------------------------------------------------------</text>
+</view>
+
+<view  hidden="{{isHidden}}" wx:for='{{items}}'>
+  <view hover-class="wsui-btn__hover_btn" bindtap="selectOne" data-id="{{item.id}}" data-name="{{item.name}}">
+            <view>
+            <label>姓名：{{item.name}}</label>
+            </view>
+            <view>
+            <label>工号：{{item.id}}</label>
+            </view>
+            <view>
+              <text>-----------------------------------------------------------</text>
+            </view>
+  </view >
+</view>
+<view  hidden="{{isHidden}}" >
+  <textarea  maxlength="-1" class="intro1" placeholder="分配的金额及备注,工号为{{selectedId}},姓名为{{selectedName}},从搜索结果中点选" value="{{splitValue}}" bindinput="selectedSplitWayInput"></textarea>
+  <button bindtap="detachSplitWay">确认增加此人</button>
+  <view class="add_btn">
+  <button class="btn" type="primary" bindtap="sendAllToService">人员增加完毕</button>
+  </view>
+</view>
+
+

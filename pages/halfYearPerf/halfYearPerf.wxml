@@ -1,0 +1,13 @@
+<!--pages/halfYerPef/halfYearPerf.wxml-->
+    <view class="table">
+    <view>姓名:{{name}}</view>
+    <view>工号:{{id}}</view>
+      <view class="tr">
+          <view class="th">年月</view>
+          <view class="th">当月实时绩效排名</view>
+      </view>
+      <view class="tr" wx:for="{{halfYearPerf}}">
+          <view class="td">{{item.time}}</view>
+          <view class="td">{{item.rank}}</view>
+      </view>
+    </view>

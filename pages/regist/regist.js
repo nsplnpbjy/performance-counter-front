@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    idInputValue:""
+    idInputValue:"",
+    isHidden:true
 
   },
 
@@ -71,7 +72,33 @@ Page({
     })
   },
   btnClick() {
-    console.log(this.data.inputVal)
+    var that=this;
+    console.log(this.data.idInputValue) 
+    wx.request({
+      url: 'http://localhost:8031/regist',
+      data: {"idInputValue":that.data.idInputValue},
+      header: { 'content-type': 'application/x-www-form-urlencoded'},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res.data)//用户注册成功就返回上一页
+        if(res.data.isSuccessed == "true"){
+          app.globalData.userRole = res.data.role;
+          app.globalData.userId = res.data.id;
+          wx.navigateBack({
+            delta: 1,
+          })
+        }
+        else{//注册失败则把提示工号错误的文字显示出来
+          that.setData({
+            isHidden:false
+          })
+        }
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
   //提交事件
 })

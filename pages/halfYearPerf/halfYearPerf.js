@@ -1,46 +1,42 @@
-// pages/leader/leader.js
-const app=getApp()
+// pages/halfYerPef/halfYearPerf.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userId:null
+    id:null,
+    name:null,
+    halfYearPerf:null
+  },
 
-  },
-  //排名列表
-  personList: function () {
-    wx.navigateTo({
-      url: '../personList/personList',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
-  },
-  //专项申请
-  speReq: function () {
-    wx.navigateTo({
-      url: '../speReq/speReq',
-    })
-  },
-  //专项管理
-  speMana: function(){
-    wx.navigateTo({
-      url: '../speMana/speMana',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userId: app.globalData.userId
+    var that = this;
+    that.setData({
+      id : options.id,
+      name:options.name
+    });
+    wx.request({
+      url: 'http://localhost:8031/getHalfYearPef',
+      data: {
+        "id":that.data.id
+      },
+      header: {},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        that.setData({
+          halfYearPerf:res.data
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
     })
-
   },
 
   /**

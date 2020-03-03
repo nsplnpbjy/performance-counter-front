@@ -6,26 +6,37 @@ Page({
   data: {
     motto: '云南电信企信部绩效管理',
     userInfo: {},
-    userRole:{},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
   enterSys: function(){
-    if (app.globalData.userData){
-      this.setData({
-        userRole:app.globalData.userRole
-      })
-    }
-    if(this.data.userRole == "领导"){
+    var that=app;
+    console.log(that.globalData.userRole)
+    if(that.globalData.userRole=="领导"){
       wx.navigateTo({
-        url: '/leader/leader',
+        url: '../leader/leader',
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},
       })
     }
-
+    else if(that.globalData.userRole=="团队长"){
+      wx.navigateTo({
+        url: '../teamLeader/teamLeader',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
+    else if(that.globalData.userRole=="员工"){
+      wx.navigateTo({
+        url: '../worker/worker',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
   },
   bindViewTap: function() {
     wx.navigateTo({

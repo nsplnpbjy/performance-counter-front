@@ -1,11 +1,8 @@
-<!--pages/leader/leader.wxml-->
+<!--pages/worker/worker.wxml-->
 <view><text>你好，工号{{userId}}</text></view>
 <view>
   <button bindtap="speReq">专项申请</button>
 </view>
 <view>
   <button bindtap="personList">本月考核人员列表</button>
-</view>
-<view>
-  <button bindtap="speMana">专项管理</button>
 </view>

@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+    var that = this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -21,7 +22,10 @@ App({
               'content-type': 'application/x-www-form-urlencoded'
             },
             success(res) {
+              console.log(res.data)
+              //判断后端返回的用户id是否为空，是则说明此用户尚未注册，跳转至注册页面
               if(res.data.id==null){
+                
                 wx.navigateTo({
                   url: '/pages/regist/regist',
                   success: function(res) {},
@@ -29,9 +33,36 @@ App({
                   complete: function(res) {},
                 })
               }
+              //如果用户已经注册，拥有openid，就按照用户的角色进入不同页面
               else{
-                this.globalData.userRole = res.data.userRole;
-                console.log(this.globalData.userRole)
+                that.globalData.userRole = res.data.role;
+                that.globalData.userId = res.data.id;
+                console.log(that.globalData.userRole);
+                //如果用户的角色是领导则进入leader界面
+                if (that.globalData.userRole == "领导") {
+                  wx.navigateTo({
+                    url: '../leader/leader',
+                    success: function (res) { },
+                    fail: function (res) { },
+                    complete: function (res) { },
+                  })
+                }
+                else if (that.globalData.userRole == "团队长") {
+                  wx.navigateTo({
+                    url: '../teamLeader/teamLeader',
+                    success: function (res) { },
+                    fail: function (res) { },
+                    complete: function (res) { },
+                  })
+                }
+                else if (that.globalData.userRole == "员工") {
+                  wx.navigateTo({
+                    url: '../worker/worker',
+                    success: function (res) { },
+                    fail: function (res) { },
+                    complete: function (res) { },
+                  })
+                }
               }
             }
           })
@@ -63,6 +94,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    userRole: null
+    userRole: null,
+    userId:null
   }
 })

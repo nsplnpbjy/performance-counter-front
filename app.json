@@ -3,7 +3,16 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/leader/leader",
-    "pages/regist/regist"
+    "pages/regist/regist",
+    "pages/teamLeader/teamLeader",
+    "pages/worker/worker",
+    "pages/recPerson/recPerson",
+    "pages/halfYearPerf/halfYearPerf",
+    "pages/personList/personList",
+    "pages/speReq/speReq",
+    "pages/selectPerson/selectPerson",
+    "pages/speMana/speMana",
+    "pages/signSpe/signSpe"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,15 @@
+<!--pages/personList/personList.wxml-->
+    <view class="table">
+      <view class="tr">
+          <view class="th">姓名</view>
+          <view class="th">工号</view>
+          <view class="th">推荐原因</view>
+          <view class="th">投票</view>
+      </view>
+      <view class="tr" wx:for="{{resData}}">
+          <view class="td">{{item.name}}</view>
+          <view class="td">{{item.id}}</view>
+          <view class="td">{{item.reason}}</view>
+          <view class="td"><button  style="width:7vw" class="but" bindtap="voteOption"  data-optionTargetId="{{item.id}}">投票</button></view>
+      </view>
+    </view>

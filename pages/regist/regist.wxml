@@ -1,4 +1,5 @@
 <!--pages/regist/regist.wxml-->
 <view><text>请输入你的工号</text></view>
-<input type="text" bindinput="input" />
+<input class="intro" type="text" bindinput="input"/>
+<view hidden="{{isHidden}}">工号输入错误，请重新输入</view>
 <button bindtap="btnClick">点击</button>

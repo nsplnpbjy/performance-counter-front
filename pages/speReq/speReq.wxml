@@ -1,0 +1,13 @@
+<!--pages/speReq/speReq.wxml-->
+<text>专项奖励申请</text>
+<view >
+  <textarea maxlength="-1" placeholder="请输入专项奖励申请原因" class="intro" value="{{reason}}" bindinput="inputReason"></textarea> 
+</view>
+<view >
+  <textarea maxlength="-1"  placeholder="请输入专项奖励申请事项" class="intro" value="{{things}}" bindinput="inputThings">
+  </textarea>    
+</view>
+<view >
+  <textarea maxlength="-1" placeholder="请输入专项奖励申请金额" class="intro" value="{{money}}" bindinput="inputMoney"></textarea>  
+</view>
+<button type="primary" bindtap="selectSplitPerson">选择分配人员</button>

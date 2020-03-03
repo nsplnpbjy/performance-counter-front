@@ -1,4 +1,4 @@
-// pages/leader/leader.js
+// pages/speMana/speMana.js
 const app=getApp()
 Page({
 
@@ -6,28 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userId:null
+    resData:null,
+    userId:null,
+  },
 
-  },
-  //排名列表
-  personList: function () {
+  lookIn:function(e){
+    var that = this;
+    let sender =JSON.stringify(e.currentTarget.dataset.object);
     wx.navigateTo({
-      url: '../personList/personList',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
-  },
-  //专项申请
-  speReq: function () {
-    wx.navigateTo({
-      url: '../speReq/speReq',
-    })
-  },
-  //专项管理
-  speMana: function(){
-    wx.navigateTo({
-      url: '../speMana/speMana',
+      url: '../signSpe/signSpe?object=' + sender,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
@@ -37,10 +24,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     this.setData({
       userId: app.globalData.userId
+    });
+    wx.request({
+      url: 'http://localhost:8031/getRewardReqList',
+      data: '',
+      header: {},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        that.setData({
+          resData: res.data
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
     })
-
   },
 
   /**

@@ -1,0 +1,13 @@
+/* pages/signSpe/signSpe.wxss */
+text{
+  display:flex;
+
+align-items:center;
+
+justify-content:center;
+}
+.intro{
+  text-align: "center";
+  border: 1px solid #ddd;
+  width: 100%;
+}

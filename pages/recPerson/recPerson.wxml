@@ -1,0 +1,19 @@
+<!--pages/recPerson/recPerson.wxml-->
+    <view class="table">
+      <view class="tr">
+          <view class="th">姓名</view>
+          <view class="th">工号</view>
+          <view class="th">推荐数</view>
+          <view class="th">半年绩效</view>
+          <view class="th">投票</view>
+          <view class="th">原因</view>
+      </view>
+      <view class="tr" wx:for="{{resData}}">
+          <view class="td">{{item.user.name}}</view>
+          <view class="td">{{item.user.id}}</view>
+          <view class="td">{{item.recVote}}</view>
+          <view class="td"><button  style="width:7vw" class="but" bindtap="reviewPerf" data-optionTargetName="{{item.user.name}}" data-optionTargetId="{{item.user.id}}">绩效</button></view>
+          <view class="td"><button  style="width:7vw" class="but" bindtap="vote" data-optionTargetId="{{item.user.id}}">投票</button> </view>
+          <view class="td"><input placeholder="请用句号结尾" class="intro" value="{{inputCache}}" bindinput="input"></input>    </view>
+      </view>
+    </view>

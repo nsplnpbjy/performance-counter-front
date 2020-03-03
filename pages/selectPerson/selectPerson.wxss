@@ -1,0 +1,43 @@
+/* pages/selectPerson/selectPerson.wxss */
+.intro{
+  text-align: "center";
+  border: 5px solid rgb(3, 3, 3);
+  height: 100%;
+}
+
+.intro1{
+  text-align: "center";
+  border: 1px solid rgb(3, 3, 3);
+  width: 100%;
+}
+
+.wsui-btn__hover_btn {
+  opacity: 0.9;
+  transform: scale(0.95, 0.95);
+  position: relative;
+  top: 3rpx;
+  left: 3rpx;
+  border: 2px solid;
+  color: red;
+  box-shadow:0px 0px 8px rgba(0, 0, 0, .1) inset; 
+}
+
+.add_btn{
+    width: 100%;
+    position: fixed;
+    bottom: 30rpx;
+}
+.btn{
+    margin-top: 30rpx;
+    width: 450rpx;
+    background: #14a1fd;
+    color: #fff;
+    border-radius: 70rpx;
+}
+text{
+  display:flex;
+
+align-items:center;
+
+justify-content:center;
+}

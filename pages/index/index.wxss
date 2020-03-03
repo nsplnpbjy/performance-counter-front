@@ -19,3 +19,10 @@
 .usermotto {
   margin-top: 200px;
 }
+text{
+  display:flex;
+
+align-items:center;
+
+justify-content:center;
+}

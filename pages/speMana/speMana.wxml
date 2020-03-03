@@ -1,0 +1,13 @@
+<!--pages/speMana/speMana.wxml-->
+    <view class="table">
+      <view class="tr">
+          <view class="th">日期</view>
+          <view class="th">原因</view>
+          <view class="th">详情</view>
+      </view>
+      <view class="tr" wx:for="{{resData}}">
+          <view class="td">{{item.time}}</view>
+          <view class="td">{{item.reason}}</view>
+          <view class="td"><button style="width:10vw" bindtap="lookIn" class="but" data-object="{{item}}">详情</button></view>
+      </view>
+    </view>

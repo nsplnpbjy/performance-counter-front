@@ -1,0 +1,56 @@
+<!--pages/signSpe/signSpe.wxml-->
+<text>批复页面</text>
+            <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view> 
+  <text>专项申请时间： {{object.time}}</text>
+              <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+</view>
+<view>
+  <text>专项唯一标识： {{object.id}}</text>
+</view>
+            <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view>
+  <text>专项申请原因： \n{{object.reason}}</text>
+</view>
+            <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view>
+  <text>专项申请事项： \n{{object.things}}</text>
+</view>
+            <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view>
+  <text>专项申请总额： {{object.toatle}}</text>
+</view>
+            <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view>
+  <text>专项分配方案： \n{{object.split}}</text>
+</view>
+            <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view>
+            <textarea class="intro" placeholder="请输入批复意见" bindinput="inputRep"></textarea>
+</view>
+              <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view>
+            <input class="intro" placeholder="请输入批复金额" bindinput="inputMoney"></input>
+</view>
+              <view>
+                <text>-----------------------------------------------------------</text>
+              </view>
+<view>
+  <button bindtap="decide">决定</button>
+</view>
